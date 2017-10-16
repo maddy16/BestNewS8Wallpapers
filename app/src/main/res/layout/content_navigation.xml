@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.sizzling.apps.bests8wallpapers.NavigationActivity"
+    tools:showIn="@layout/app_bar_navigation">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_above="@id/bannerAd"
+        android:id="@+id/recyclerview"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/setWBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bannerAd"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:text="Set as Wallpaper"/>
+    <com.alexvasilkov.gestures.views.GestureImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:layout_above="@id/setWBtn"
+        android:id="@+id/zoomedImage"
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/setWBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/bannerAd"
+        android:id="@+id/wallpaperSpinner"
+        android:visibility="invisible"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/image_slider"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_above="@id/wallpaperSpinner"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
